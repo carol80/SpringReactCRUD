@@ -1,9 +1,14 @@
 import React from "react";
 import './App.css';
-import Navbar from "./components/navbar";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { Switch,Route } from "react-router-dom";
+
+
+import Navbar from "./components/navbar";
 import Home from "./components/home"
+import AddContact from "./components/addContact";
+import EditContact from "./components/editContact";
+
 
 const App = () => {
   return (
@@ -16,11 +21,11 @@ const App = () => {
         </Route>
 
         <Route exact path="/add">
-          <h1>Add Component</h1>
+          <AddContact />
         </Route>
 
         <Route exact path="/edit/:id">
-          <h1>Edit Component</h1>
+          <EditContact />
         </Route>
 
         <Route exact path="/delete">
