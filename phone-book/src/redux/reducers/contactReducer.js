@@ -20,6 +20,8 @@ const contactReducer = (state=InitialState, {type, payload}) => {
         case "UPDATE_CONTACT":
             const updatedState = state.map(contacts => contacts.id === payload.id ? payload : contacts);
             return updatedState;
+        case "DELETE_CONTACT":
+            return state.filter(contact => contact.id === payload ? null : contact);
         default:
             return state;
     }
